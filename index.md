@@ -12,13 +12,16 @@ For more details see [GitHub TagUI](https://github.com/kelaberetiv/TagUI).
 ### 人人都会RPA视频教程
 
 - 第一期 [人人都会RPA - 通过12306刷票机器人带你认识RPA](https://www.bilibili.com/video/av82768522?from=search&seid=10467909277790903834)
+    <div class="video-container">
+        <iframe src="//player.bilibili.com/player.html?aid=82768522&cid=141609247&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
 - 第二期 _敬请期待_
 
 
 
 <p> 
     <div class="video-container">
-        <iframe width="95%" height="450" src="https://v.miaopai.com/iframe?scid=SvyHaHOczsp7B6ftW86oqMMz62-h5ai6~Fwp8A__" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        <iframe src="//player.bilibili.com/player.html?aid=82768522&cid=141609247&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
     </div>
     <style type="text/css">
         .video-container {
