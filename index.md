@@ -19,10 +19,10 @@ For more details see [GitHub TagUI](https://github.com/kelaberetiv/TagUI).
 
 
 
+
+
+
 <p> 
-    <div class="video-container">
-        <iframe src="//player.bilibili.com/player.html?aid=82768522&cid=141609247&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-    </div>
     <style type="text/css">
         .video-container {
             position: relative;
