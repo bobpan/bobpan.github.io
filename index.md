@@ -16,10 +16,24 @@ For more details see [GitHub TagUI](https://github.com/kelaberetiv/TagUI).
 
 
 
-<iframe
-    height=450
-    width=800
-    src="http://player.youku.com/embed/XMzMxMjE0MjY4NA=="
-    frameborder=0
-    allowfullscreen>
-</iframe>
+<p> 
+    <div class="video-container">
+        <iframe width="95%" height="450" src="https://v.miaopai.com/iframe?scid=SvyHaHOczsp7B6ftW86oqMMz62-h5ai6~Fwp8A__" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+    <style type="text/css">
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+<p> 
