@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nano Banana AI - 下一代 AI 照片修复与创意工具。一键修复老照片、智能上色、文生图，重现美好记忆。">
+    <title>Nano Banana AI | 记忆重现，创意无限</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920879457200472"
+     crossorigin="anonymous"></script>
+
+    <style>
+        /* --- 1. 核心变量 (OpenAI + Banana 风格) --- */
+        :root {
+            /* 品牌色：Banana Yellow */
+            --primary: #F5D94D; 
+            --primary-hover: #EACE40;
+            
+            /* OpenAI 风格黑白灰 */
+            --bg-body: #FFFFFF;
+            --bg-surface: #F9FAFB;
+            --text-main: #111827;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+            
+            /* 布局 */
+            --max-width: 1200px;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* --- 2. 全局重置 --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- 3. 导航栏 --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: #D9B910; } /* 深一点的黄色用于文字 */
+
+        .nav-cta {
+            background-color: var(--text-main);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background-color: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* --- 4. Hero 区域 --- */
+        .hero {
+            padding: 160px 20px 100px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(245, 217, 77, 0.15) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, #F5D94D 0%, #FFB800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-main);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 217, 77, 0.4);
+        }
+
+        /* --- 5. 特性网格 (Bento Grid) --- */
+        .features {
+            padding: 80px 20px;
+            background-color: var(--bg-surface);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .section-title p { color: var(--text-secondary); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: #FFF9C4;
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .card p { color: var(--text-secondary); font-size: 1rem; }
+
+        /* --- 6. 广告位占位 (AdSense) --- */
+        .ad-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            border: 1px dashed #ddd;
+            border-radius: var(--radius);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* --- 7. Footer --- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-logo { font-weight: 700; font-size: 1.5rem; margin-bottom: 1rem; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        .footer-links a:hover { color: var(--text-main); }
+        .copyright { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nano Banana 🍌</a>
+            <a href="https://aips.bobot.fun" class="nav-cta">开始使用</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>
+            唤醒沉睡的记忆<br>
+            <span class="highlight">Nano Banana AI</span>
+        </h1>
+        <p>
+            不仅仅是修复。利用最先进的生成式 AI 模型，<br>
+            一键让老照片焕发新生，让模糊的瞬间重回清晰。
+        </p>
+        <div class="hero-btns">
+            <a href="https://aips.bobot.fun" class="btn-primary">立即免费试用</a>
+        </div>
+    </section>
+
+    <div class="ad-container">
+        Google AdSense Banner - 970x90 / Responsive
+    </div>
+
+    <section class="features">
+        <div class="section-title">
+            <h2>魔法般的能力</h2>
+            <p>基于 Gemini 3.0 视觉模型驱动</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">🪄</span>
+                <h3>智能修复</h3>
+                <p>自动识别并去除老照片中的划痕、折痕和污渍。无需专业 PS 技能，AI 自动填补缺失细节。</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🎨</span>
+                <h3>黑白上色</h3>
+                <p>不仅仅是填色。AI 分析场景光影，为黑白照片还原最真实、自然的色彩，仿佛穿越时空。</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">👤</span>
+                <h3>人像增强</h3>
+                <p>针对面部细节进行专门优化。让模糊的五官变得清晰锐利，找回亲人最真切的眼神。</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">✨</span>
+                <h3>文生图创意</h3>
+                <p>没有图片？没问题。输入一段描述，Nano Banana 直接为您生成高质量的全新图像。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="ad-container">
+        Google AdSense In-feed / Responsive
+    </div>
+
+    <footer>
+        <div class="footer-logo">Nano Banana AI</div>
+        <div class="footer-links">
+            <a href="#">隐私政策</a>
+            <a href="#">服务条款</a>
+            <a href="#">关于我们</a>
+        </div>
+        <p class="copyright">&copy; 2024 Nano Banana AI. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
