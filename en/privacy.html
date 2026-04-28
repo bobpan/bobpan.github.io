@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — DataPick AI</title>
+  <meta name="google-adsense-account" content="ca-pub-1920879457200472">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920879457200472" crossorigin="anonymous"></script>
+  <meta name="description" content="Privacy Policy for DataPick AI Chrome Extension — AI-powered web data extraction." />
+  <meta property="og:title" content="Privacy Policy — DataPick AI" />
+  <meta property="og:description" content="Privacy Policy for DataPick AI Chrome Extension." />
+  <meta property="og:url" content="https://bobot.ggff.net/en/privacy.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DataPick AI" />
+  <link rel="canonical" href="https://bobot.ggff.net/en/privacy.html" />
+  <link rel="alternate" hreflang="zh" href="https://bobot.ggff.net/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://bobot.ggff.net/en/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            page: '#08090a',
+            panel: '#0f1011',
+            surface: '#191a1b',
+            accent: { DEFAULT: '#5e6ad2', hover: '#828fff', interactive: '#7170ff' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { font-feature-settings: 'cv01', 'ss03'; }
+    body { background: #08090a; color: #f7f8f8; }
+    .gradient-text { background: linear-gradient(135deg, #7170ff 0%, #828fff 50%, #5e6ad2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .border-subtle { border-color: rgba(255,255,255,0.08); }
+    .bg-card { background: rgba(255,255,255,0.02); }
+    .text-secondary { color: #d0d6e0; }
+    .text-muted { color: #8a8f98; }
+    .display-heading { font-weight: 510; letter-spacing: -1.2px; }
+    .label-text { font-weight: 590; }
+    .emphasis-text { font-weight: 510; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 64px 64px; }
+    .info-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #08090a; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+    /* Language switcher */
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; min-width: 160px; background: #191a1b; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 100; }
+    .lang-dropdown-menu.open { display: block; }
+    .lang-dropdown-menu a { display: flex; align-items: center; gap: 8px; padding: 10px 16px; color: #d0d6e0; font-size: 14px; text-decoration: none; transition: background 0.15s; }
+    .lang-dropdown-menu a:hover { background: rgba(255,255,255,0.06); }
+    .lang-dropdown-menu a.active { color: #7170ff; }
+  </style>
+</head>
+<body class="font-sans antialiased grid-bg">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-page/80 backdrop-blur-xl border-b border-subtle">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/en/" class="flex items-center gap-2 text-white font-medium text-lg">
+        <span class="text-2xl">🤖</span>
+        <span class="emphasis-text">DataPick <span class="gradient-text">AI</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-muted">
+        <a href="/en/" class="hover:text-white transition-colors duration-200">Home</a>
+        <a href="/en/#features" class="hover:text-white transition-colors duration-200">Features</a>
+        <a href="/en/#pricing" class="hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/en/#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <div class="lang-dropdown">
+          <button id="langToggle" class="flex items-center gap-1.5 text-sm text-muted hover:text-white transition-colors duration-200 px-3 py-1.5 rounded-md border border-subtle hover:border-accent-interactive/30" aria-label="Switch language">
+            <span>🌐</span>
+            <span>English</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="langMenu" class="lang-dropdown-menu">
+            <a href="/privacy.html">
+              <span>🇨🇳</span> 中文 (Chinese)
+            </a>
+            <a href="/en/privacy.html" class="active">
+              <span>🇺🇸</span> English
+            </a>
+          </div>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/datapick-ai/olkldpaealkkolnihpkdgiaiollkdnpi" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-hover text-white px-5 py-2 rounded-md text-sm label-text transition-colors duration-200">
+          Install Free
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+
+      <h1 class="text-4xl md:text-5xl display-heading text-white mb-4">Privacy Policy</h1>
+      <p class="text-muted mb-12">Last updated: April 28, 2026</p>
+
+      <!-- Introduction -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Introduction</h2>
+        <p class="text-secondary leading-relaxed mb-4">
+          DataPick AI ("we," "our," or "us") is a Chrome browser extension that helps users extract structured data from webpages using artificial intelligence. This Privacy Policy explains how we collect, use, and protect your information when you use our extension and related services.
+        </p>
+        <p class="text-secondary leading-relaxed">
+          By installing and using the DataPick AI extension, you agree to the practices described in this policy. If you do not agree, please uninstall the extension and discontinue use.
+        </p>
+      </section>
+
+      <!-- How the Extension Works -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">How the Extension Works</h2>
+        <div class="info-card p-6 mb-4">
+          <p class="text-secondary leading-relaxed">
+            When you initiate a data extraction, DataPick AI reads the <strong class="text-white">text content of the current webpage</strong> and sends it to our backend processing service (hosted on <strong class="text-white">Supabase Edge Functions</strong>), which then forwards the content to <strong class="text-white">Anthropic's Claude AI</strong> for intelligent data extraction and structuring. The structured results are returned to you within the extension.
+          </p>
+        </div>
+        <p class="text-secondary leading-relaxed text-sm">
+          <strong class="text-accent-interactive">Important:</strong> Page content is only sent when you explicitly click the "Extract" button. The extension does <strong class="text-white">not</strong> automatically scan, monitor, or transmit any browsing data in the background.
+        </p>
+      </section>
+
+      <!-- Data We Collect -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Data We Collect</h2>
+        <p class="text-secondary leading-relaxed mb-4">We collect only what is necessary to provide the service:</p>
+        <div class="space-y-4">
+          <div class="info-card p-5">
+            <h3 class="text-lg emphasis-text text-white mb-2">📄 Page Text Content</h3>
+            <p class="text-muted text-sm leading-relaxed">When you click "Extract," the visible text content of the active webpage is sent to our servers for AI processing. This data is used solely to generate extraction results and is <strong class="text-white">not stored permanently</strong> on our servers after processing is complete.</p>
+          </div>
+          <div class="info-card p-5">
+            <h3 class="text-lg emphasis-text text-white mb-2">📧 User Email (Authentication)</h3>
+            <p class="text-muted text-sm leading-relaxed">We collect your email address when you sign up or log in. This is used for account authentication, managing your subscription, and sending critical service-related communications only.</p>
+          </div>
+          <div class="info-card p-5">
+            <h3 class="text-lg emphasis-text text-white mb-2">📊 Extraction History</h3>
+            <p class="text-muted text-sm leading-relaxed">For Pro and Team plan users, we store your extraction results (the structured output data) so you can access them later. You can view and delete your extraction history at any time from within the extension.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data We Do NOT Collect -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Data We Do NOT Collect</h2>
+        <p class="text-secondary leading-relaxed mb-4">We want to be crystal clear about what we don't do:</p>
+        <ul class="space-y-3 text-secondary">
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 mt-0.5">✗</span>
+            <span>We do <strong class="text-white">not</strong> collect or monitor your browsing history or activity beyond pages you explicitly choose to extract data from.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 mt-0.5">✗</span>
+            <span>We do <strong class="text-white">not</strong> track which websites you visit.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 mt-0.5">✗</span>
+            <span>We do <strong class="text-white">not</strong> collect passwords, form inputs, cookies, or personal identifiers from webpages.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 mt-0.5">✗</span>
+            <span>We do <strong class="text-white">not</strong> inject ads, trackers, or third-party analytics scripts.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 mt-0.5">✗</span>
+            <span>We do <strong class="text-white">not</strong> run in the background or collect data when you are not actively using the extension.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Data Sharing -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Data Sharing & Third Parties</h2>
+        <div class="info-card p-6">
+          <p class="text-secondary leading-relaxed mb-4">
+            <strong class="text-white">We do not sell, rent, or share your personal data with third parties for marketing or advertising purposes.</strong>
+          </p>
+          <p class="text-secondary leading-relaxed mb-4">Your data is only shared with the following service providers, strictly for operating the service:</p>
+          <ul class="space-y-2 text-secondary text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-accent-interactive">•</span>
+              <span><strong class="text-white">Supabase</strong> — for user authentication, data storage, and serverless backend functions.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent-interactive">•</span>
+              <span><strong class="text-white">Anthropic (Claude AI)</strong> — for AI-powered data extraction processing. Page content is sent to Claude's API for analysis and is subject to <a href="https://www.anthropic.com/privacy" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Data Security -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Data Security</h2>
+        <p class="text-secondary leading-relaxed">
+          We implement industry-standard security measures to protect your data. All data transmitted between the extension and our servers is encrypted using HTTPS/TLS. Authentication is handled via Supabase's secure auth infrastructure. While no system is 100% secure, we take reasonable precautions to safeguard your information.
+        </p>
+      </section>
+
+      <!-- Data Retention -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Data Retention</h2>
+        <ul class="space-y-2 text-secondary">
+          <li class="flex items-start gap-2">
+            <span class="text-accent-interactive">•</span>
+            <span><strong class="text-white">Page content</strong> sent for extraction is processed in real-time and is not permanently stored on our servers.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-interactive">•</span>
+            <span><strong class="text-white">Extraction results</strong> are retained for active subscribers and can be deleted by the user at any time.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent-interactive">•</span>
+            <span><strong class="text-white">Account data</strong> is retained as long as your account is active. You may request account deletion by contacting us.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Your Rights -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Your Rights</h2>
+        <p class="text-secondary leading-relaxed mb-4">You have the right to:</p>
+        <ul class="space-y-2 text-secondary">
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Access the personal data we hold about you</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Request deletion of your data and account</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Export your extraction history</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Opt out of non-essential communications</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Uninstall the extension at any time to stop all data collection</li>
+        </ul>
+      </section>
+
+      <!-- Children's Privacy -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Children's Privacy</h2>
+        <p class="text-secondary leading-relaxed">
+          DataPick AI is not intended for use by children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.
+        </p>
+      </section>
+
+      <!-- Changes to This Policy -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Changes to This Policy</h2>
+        <p class="text-secondary leading-relaxed">
+          We may update this Privacy Policy from time to time. If we make significant changes, we will notify users through the extension or via email. The "Last updated" date at the top of this page reflects when the policy was most recently revised.
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section class="mb-10">
+        <h2 class="text-2xl emphasis-text text-white mb-4">Contact Us</h2>
+        <p class="text-secondary leading-relaxed mb-4">
+          If you have questions, concerns, or requests regarding this Privacy Policy or your data, please reach out to us:
+        </p>
+        <div class="info-card p-6">
+          <ul class="space-y-2 text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-accent-interactive">📧</span>
+              <span>Email: <a href="mailto:nicepan@gmail.com" class="text-accent-interactive hover:text-accent-hover underline">nicepan@gmail.com</a></span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-accent-interactive">🐙</span>
+              <span>GitHub: <a href="https://github.com/bobpan/ai-web-scraper" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">bobpan/ai-web-scraper</a></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Ad: After privacy content -->
+  <div class="max-w-3xl mx-auto px-6 py-6">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1920879457200472"
+         data-ad-slot="auto"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-subtle py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <a href="/en/" class="flex items-center gap-2 text-white font-medium">
+        <span class="text-xl">🤖</span>
+        <span class="emphasis-text">DataPick <span class="gradient-text">AI</span></span>
+      </a>
+      <div class="flex items-center gap-6 text-sm text-muted">
+        <a href="/en/privacy.html" class="text-accent-interactive hover:text-accent-hover transition-colors duration-200">Privacy Policy</a>
+        <a href="mailto:nicepan@gmail.com" class="hover:text-white transition-colors duration-200">Contact</a>
+        <a href="https://github.com/bobpan/ai-web-scraper" target="_blank" rel="noopener" class="hover:text-white transition-colors duration-200">GitHub</a>
+      </div>
+      <p class="text-muted text-sm">© 2026 DataPick AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Language switcher script -->
+  <script>
+    (function() {
+      localStorage.setItem('datapick-lang', 'en');
+
+      var toggle = document.getElementById('langToggle');
+      var menu = document.getElementById('langMenu');
+
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function() {
+        menu.classList.remove('open');
+      });
+
+      menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href.indexOf('/en/') !== -1) {
+            localStorage.setItem('datapick-lang', 'en');
+          } else {
+            localStorage.setItem('datapick-lang', 'zh');
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
