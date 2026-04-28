@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — DataPick AI</title>
+  <title>隐私政策 — DataPick AI</title>
   <meta name="google-adsense-account" content="ca-pub-1920879457200472">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920879457200472" crossorigin="anonymous"></script>
-  <meta name="description" content="Privacy Policy for DataPick AI Chrome Extension — AI-powered web data extraction." />
-  <meta property="og:title" content="Privacy Policy — DataPick AI" />
-  <meta property="og:description" content="Privacy Policy for DataPick AI Chrome Extension." />
+  <meta name="description" content="DataPick AI Chrome 扩展隐私政策——AI 驱动的网页数据提取工具。" />
+  <meta property="og:title" content="隐私政策 — DataPick AI" />
+  <meta property="og:description" content="DataPick AI Chrome 扩展隐私政策。" />
   <meta property="og:url" content="https://bobot.ggff.net/privacy.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DataPick AI" />
   <link rel="canonical" href="https://bobot.ggff.net/privacy.html" />
+  <link rel="alternate" hreflang="zh" href="https://bobot.ggff.net/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://bobot.ggff.net/en/privacy.html" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -52,6 +54,14 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #08090a; }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+    /* Language switcher */
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; min-width: 160px; background: #191a1b; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 100; }
+    .lang-dropdown-menu.open { display: block; }
+    .lang-dropdown-menu a { display: flex; align-items: center; gap: 8px; padding: 10px 16px; color: #d0d6e0; font-size: 14px; text-decoration: none; transition: background 0.15s; }
+    .lang-dropdown-menu a:hover { background: rgba(255,255,255,0.06); }
+    .lang-dropdown-menu a.active { color: #7170ff; }
   </style>
 </head>
 <body class="font-sans antialiased grid-bg">
@@ -64,187 +74,205 @@
         <span class="emphasis-text">DataPick <span class="gradient-text">AI</span></span>
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm text-muted">
-        <a href="/" class="hover:text-white transition-colors duration-200">Home</a>
-        <a href="/#features" class="hover:text-white transition-colors duration-200">Features</a>
-        <a href="/#pricing" class="hover:text-white transition-colors duration-200">Pricing</a>
-        <a href="/#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
+        <a href="/" class="hover:text-white transition-colors duration-200">首页</a>
+        <a href="/#features" class="hover:text-white transition-colors duration-200">功能</a>
+        <a href="/#pricing" class="hover:text-white transition-colors duration-200">价格</a>
+        <a href="/#faq" class="hover:text-white transition-colors duration-200">常见问题</a>
       </div>
-      <a href="https://chromewebstore.google.com/detail/datapick-ai/olkldpaealkkolnihpkdgiaiollkdnpi" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-hover text-white px-5 py-2 rounded-md text-sm label-text transition-colors duration-200">
-        Install Free
-      </a>
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <div class="lang-dropdown">
+          <button id="langToggle" class="flex items-center gap-1.5 text-sm text-muted hover:text-white transition-colors duration-200 px-3 py-1.5 rounded-md border border-subtle hover:border-accent-interactive/30" aria-label="切换语言">
+            <span>🌐</span>
+            <span>中文</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="langMenu" class="lang-dropdown-menu">
+            <a href="/privacy.html" class="active">
+              <span>🇨🇳</span> 中文 (Chinese)
+            </a>
+            <a href="/en/privacy.html">
+              <span>🇺🇸</span> English
+            </a>
+          </div>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/datapick-ai/olkldpaealkkolnihpkdgiaiollkdnpi" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-hover text-white px-5 py-2 rounded-md text-sm label-text transition-colors duration-200">
+          免费安装
+        </a>
+      </div>
     </div>
   </nav>
 
   <main class="pt-28 pb-20 px-6">
     <div class="max-w-3xl mx-auto">
 
-      <h1 class="text-4xl md:text-5xl display-heading text-white mb-4">Privacy Policy</h1>
-      <p class="text-muted mb-12">Last updated: April 28, 2026</p>
+      <h1 class="text-4xl md:text-5xl display-heading text-white mb-4">隐私政策</h1>
+      <p class="text-muted mb-12">最后更新：2026 年 4 月 28 日</p>
 
-      <!-- Introduction -->
+      <!-- 简介 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Introduction</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">简介</h2>
         <p class="text-secondary leading-relaxed mb-4">
-          DataPick AI ("we," "our," or "us") is a Chrome browser extension that helps users extract structured data from webpages using artificial intelligence. This Privacy Policy explains how we collect, use, and protect your information when you use our extension and related services.
+          DataPick AI（以下简称"我们"）是一款 Chrome 浏览器扩展，利用人工智能帮助用户从网页中提取结构化数据。本隐私政策说明了当您使用我们的扩展及相关服务时，我们如何收集、使用和保护您的信息。
         </p>
         <p class="text-secondary leading-relaxed">
-          By installing and using the DataPick AI extension, you agree to the practices described in this policy. If you do not agree, please uninstall the extension and discontinue use.
+          安装和使用 DataPick AI 扩展即表示您同意本政策中描述的做法。如果您不同意，请卸载扩展并停止使用。
         </p>
       </section>
 
-      <!-- How the Extension Works -->
+      <!-- 扩展工作原理 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">How the Extension Works</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">扩展工作原理</h2>
         <div class="info-card p-6 mb-4">
           <p class="text-secondary leading-relaxed">
-            When you initiate a data extraction, DataPick AI reads the <strong class="text-white">text content of the current webpage</strong> and sends it to our backend processing service (hosted on <strong class="text-white">Supabase Edge Functions</strong>), which then forwards the content to <strong class="text-white">Anthropic's Claude AI</strong> for intelligent data extraction and structuring. The structured results are returned to you within the extension.
+            当您发起数据提取时，DataPick AI 会读取<strong class="text-white">当前网页的文本内容</strong>，并将其发送到我们的后端处理服务（托管在 <strong class="text-white">Supabase Edge Functions</strong> 上），然后转发到 <strong class="text-white">Anthropic 的 Claude AI</strong> 进行智能数据提取和结构化处理。处理后的结构化结果会在扩展中返回给您。
           </p>
         </div>
         <p class="text-secondary leading-relaxed text-sm">
-          <strong class="text-accent-interactive">Important:</strong> Page content is only sent when you explicitly click the "Extract" button. The extension does <strong class="text-white">not</strong> automatically scan, monitor, or transmit any browsing data in the background.
+          <strong class="text-accent-interactive">重要提示：</strong>页面内容仅在您明确点击「提取」按钮时才会发送。扩展<strong class="text-white">不会</strong>在后台自动扫描、监控或传输任何浏览数据。
         </p>
       </section>
 
-      <!-- Data We Collect -->
+      <!-- 我们收集的数据 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Data We Collect</h2>
-        <p class="text-secondary leading-relaxed mb-4">We collect only what is necessary to provide the service:</p>
+        <h2 class="text-2xl emphasis-text text-white mb-4">我们收集的数据</h2>
+        <p class="text-secondary leading-relaxed mb-4">我们仅收集提供服务所必需的数据：</p>
         <div class="space-y-4">
           <div class="info-card p-5">
-            <h3 class="text-lg emphasis-text text-white mb-2">📄 Page Text Content</h3>
-            <p class="text-muted text-sm leading-relaxed">When you click "Extract," the visible text content of the active webpage is sent to our servers for AI processing. This data is used solely to generate extraction results and is <strong class="text-white">not stored permanently</strong> on our servers after processing is complete.</p>
+            <h3 class="text-lg emphasis-text text-white mb-2">📄 页面文本内容</h3>
+            <p class="text-muted text-sm leading-relaxed">当您点击「提取」时，当前网页的可见文本内容会被发送到我们的服务器进行 AI 处理。该数据仅用于生成提取结果，处理完成后<strong class="text-white">不会永久存储</strong>在我们的服务器上。</p>
           </div>
           <div class="info-card p-5">
-            <h3 class="text-lg emphasis-text text-white mb-2">📧 User Email (Authentication)</h3>
-            <p class="text-muted text-sm leading-relaxed">We collect your email address when you sign up or log in. This is used for account authentication, managing your subscription, and sending critical service-related communications only.</p>
+            <h3 class="text-lg emphasis-text text-white mb-2">📧 用户邮箱（身份验证）</h3>
+            <p class="text-muted text-sm leading-relaxed">我们在您注册或登录时收集您的邮箱地址。仅用于账户身份验证、管理订阅以及发送关键的服务相关通知。</p>
           </div>
           <div class="info-card p-5">
-            <h3 class="text-lg emphasis-text text-white mb-2">📊 Extraction History</h3>
-            <p class="text-muted text-sm leading-relaxed">For Pro and Team plan users, we store your extraction results (the structured output data) so you can access them later. You can view and delete your extraction history at any time from within the extension.</p>
+            <h3 class="text-lg emphasis-text text-white mb-2">📊 提取历史记录</h3>
+            <p class="text-muted text-sm leading-relaxed">对于 Pro 和 Team 套餐用户，我们会存储您的提取结果（结构化输出数据），以便您日后访问。您可以随时在扩展中查看和删除提取历史记录。</p>
           </div>
         </div>
       </section>
 
-      <!-- Data We Do NOT Collect -->
+      <!-- 我们不收集的数据 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Data We Do NOT Collect</h2>
-        <p class="text-secondary leading-relaxed mb-4">We want to be crystal clear about what we don't do:</p>
+        <h2 class="text-2xl emphasis-text text-white mb-4">我们不收集的数据</h2>
+        <p class="text-secondary leading-relaxed mb-4">我们明确声明以下事项：</p>
         <ul class="space-y-3 text-secondary">
           <li class="flex items-start gap-3">
             <span class="text-red-400 mt-0.5">✗</span>
-            <span>We do <strong class="text-white">not</strong> collect or monitor your browsing history or activity beyond pages you explicitly choose to extract data from.</span>
+            <span>我们<strong class="text-white">不会</strong>收集或监控您的浏览历史或活动，除非您明确选择提取某个页面的数据。</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-red-400 mt-0.5">✗</span>
-            <span>We do <strong class="text-white">not</strong> track which websites you visit.</span>
+            <span>我们<strong class="text-white">不会</strong>追踪您访问的网站。</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-red-400 mt-0.5">✗</span>
-            <span>We do <strong class="text-white">not</strong> collect passwords, form inputs, cookies, or personal identifiers from webpages.</span>
+            <span>我们<strong class="text-white">不会</strong>收集密码、表单输入、Cookie 或网页中的个人标识符。</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-red-400 mt-0.5">✗</span>
-            <span>We do <strong class="text-white">not</strong> inject ads, trackers, or third-party analytics scripts.</span>
+            <span>我们<strong class="text-white">不会</strong>注入广告、追踪器或第三方分析脚本。</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-red-400 mt-0.5">✗</span>
-            <span>We do <strong class="text-white">not</strong> run in the background or collect data when you are not actively using the extension.</span>
+            <span>我们<strong class="text-white">不会</strong>在后台运行或在您未主动使用扩展时收集数据。</span>
           </li>
         </ul>
       </section>
 
-      <!-- Data Sharing -->
+      <!-- 数据共享与第三方 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Data Sharing & Third Parties</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">数据共享与第三方</h2>
         <div class="info-card p-6">
           <p class="text-secondary leading-relaxed mb-4">
-            <strong class="text-white">We do not sell, rent, or share your personal data with third parties for marketing or advertising purposes.</strong>
+            <strong class="text-white">我们不会为了营销或广告目的向第三方出售、出租或共享您的个人数据。</strong>
           </p>
-          <p class="text-secondary leading-relaxed mb-4">Your data is only shared with the following service providers, strictly for operating the service:</p>
+          <p class="text-secondary leading-relaxed mb-4">您的数据仅与以下服务提供商共享，且仅限于运营服务所需：</p>
           <ul class="space-y-2 text-secondary text-sm">
             <li class="flex items-start gap-2">
               <span class="text-accent-interactive">•</span>
-              <span><strong class="text-white">Supabase</strong> — for user authentication, data storage, and serverless backend functions.</span>
+              <span><strong class="text-white">Supabase</strong> — 用于用户身份验证、数据存储和无服务器后端功能。</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-accent-interactive">•</span>
-              <span><strong class="text-white">Anthropic (Claude AI)</strong> — for AI-powered data extraction processing. Page content is sent to Claude's API for analysis and is subject to <a href="https://www.anthropic.com/privacy" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</span>
+              <span><strong class="text-white">Anthropic（Claude AI）</strong> — 用于 AI 驱动的数据提取处理。页面内容会发送到 Claude 的 API 进行分析，受 <a href="https://www.anthropic.com/privacy" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">Anthropic 隐私政策</a>约束。</span>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Data Security -->
+      <!-- 数据安全 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Data Security</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">数据安全</h2>
         <p class="text-secondary leading-relaxed">
-          We implement industry-standard security measures to protect your data. All data transmitted between the extension and our servers is encrypted using HTTPS/TLS. Authentication is handled via Supabase's secure auth infrastructure. While no system is 100% secure, we take reasonable precautions to safeguard your information.
+          我们采用行业标准的安全措施来保护您的数据。扩展与服务器之间传输的所有数据均通过 HTTPS/TLS 加密。身份验证由 Supabase 的安全认证基础设施处理。虽然没有任何系统能做到百分之百安全，但我们会采取合理的预防措施来保障您的信息安全。
         </p>
       </section>
 
-      <!-- Data Retention -->
+      <!-- 数据保留 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Data Retention</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">数据保留</h2>
         <ul class="space-y-2 text-secondary">
           <li class="flex items-start gap-2">
             <span class="text-accent-interactive">•</span>
-            <span><strong class="text-white">Page content</strong> sent for extraction is processed in real-time and is not permanently stored on our servers.</span>
+            <span>用于提取的<strong class="text-white">页面内容</strong>会实时处理，处理后不会永久存储在我们的服务器上。</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-accent-interactive">•</span>
-            <span><strong class="text-white">Extraction results</strong> are retained for active subscribers and can be deleted by the user at any time.</span>
+            <span><strong class="text-white">提取结果</strong>为活跃订阅用户保留，用户可随时删除。</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-accent-interactive">•</span>
-            <span><strong class="text-white">Account data</strong> is retained as long as your account is active. You may request account deletion by contacting us.</span>
+            <span><strong class="text-white">账户数据</strong>在账户处于活跃状态期间保留。您可以通过联系我们申请删除账户。</span>
           </li>
         </ul>
       </section>
 
-      <!-- Your Rights -->
+      <!-- 您的权利 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Your Rights</h2>
-        <p class="text-secondary leading-relaxed mb-4">You have the right to:</p>
+        <h2 class="text-2xl emphasis-text text-white mb-4">您的权利</h2>
+        <p class="text-secondary leading-relaxed mb-4">您享有以下权利：</p>
         <ul class="space-y-2 text-secondary">
-          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Access the personal data we hold about you</li>
-          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Request deletion of your data and account</li>
-          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Export your extraction history</li>
-          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Opt out of non-essential communications</li>
-          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Uninstall the extension at any time to stop all data collection</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> 访问我们持有的关于您的个人数据</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> 申请删除您的数据和账户</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> 导出您的提取历史记录</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> 退订非必要的通知</li>
+          <li class="flex items-start gap-2"><span class="text-green-400">✓</span> 随时卸载扩展以停止所有数据收集</li>
         </ul>
       </section>
 
-      <!-- Children's Privacy -->
+      <!-- 儿童隐私 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Children's Privacy</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">儿童隐私</h2>
         <p class="text-secondary leading-relaxed">
-          DataPick AI is not intended for use by children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.
+          DataPick AI 不面向 13 岁以下的儿童。我们不会故意收集儿童的个人信息。如果您认为有儿童向我们提供了个人数据，请与我们联系，我们将及时删除。
         </p>
       </section>
 
-      <!-- Changes to This Policy -->
+      <!-- 政策变更 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Changes to This Policy</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">政策变更</h2>
         <p class="text-secondary leading-relaxed">
-          We may update this Privacy Policy from time to time. If we make significant changes, we will notify users through the extension or via email. The "Last updated" date at the top of this page reflects when the policy was most recently revised.
+          我们可能会不定期更新本隐私政策。如有重大变更，我们将通过扩展或电子邮件通知用户。本页面顶部的"最后更新"日期反映了政策最近一次修订的时间。
         </p>
       </section>
 
-      <!-- Contact -->
+      <!-- 联系我们 -->
       <section class="mb-10">
-        <h2 class="text-2xl emphasis-text text-white mb-4">Contact Us</h2>
+        <h2 class="text-2xl emphasis-text text-white mb-4">联系我们</h2>
         <p class="text-secondary leading-relaxed mb-4">
-          If you have questions, concerns, or requests regarding this Privacy Policy or your data, please reach out to us:
+          如果您对本隐私政策或您的数据有任何疑问、顾虑或请求，请通过以下方式联系我们：
         </p>
         <div class="info-card p-6">
           <ul class="space-y-2 text-secondary">
             <li class="flex items-center gap-2">
               <span class="text-accent-interactive">📧</span>
-              <span>Email: <a href="mailto:nicepan@gmail.com" class="text-accent-interactive hover:text-accent-hover underline">nicepan@gmail.com</a></span>
+              <span>邮箱：<a href="mailto:nicepan@gmail.com" class="text-accent-interactive hover:text-accent-hover underline">nicepan@gmail.com</a></span>
             </li>
             <li class="flex items-center gap-2">
               <span class="text-accent-interactive">🐙</span>
-              <span>GitHub: <a href="https://github.com/bobpan/ai-web-scraper" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">bobpan/ai-web-scraper</a></span>
+              <span>GitHub：<a href="https://github.com/bobpan/ai-web-scraper" class="text-accent-interactive hover:text-accent-hover underline" target="_blank" rel="noopener">bobpan/ai-web-scraper</a></span>
             </li>
           </ul>
         </div>
@@ -272,13 +300,47 @@
         <span class="emphasis-text">DataPick <span class="gradient-text">AI</span></span>
       </a>
       <div class="flex items-center gap-6 text-sm text-muted">
-        <a href="/privacy.html" class="text-accent-interactive hover:text-accent-hover transition-colors duration-200">Privacy Policy</a>
-        <a href="mailto:nicepan@gmail.com" class="hover:text-white transition-colors duration-200">Contact</a>
+        <a href="/privacy.html" class="text-accent-interactive hover:text-accent-hover transition-colors duration-200">隐私政策</a>
+        <a href="mailto:nicepan@gmail.com" class="hover:text-white transition-colors duration-200">联系我们</a>
         <a href="https://github.com/bobpan/ai-web-scraper" target="_blank" rel="noopener" class="hover:text-white transition-colors duration-200">GitHub</a>
       </div>
-      <p class="text-muted text-sm">© 2025 DataPick AI. All rights reserved.</p>
+      <p class="text-muted text-sm">© 2026 DataPick AI. 保留所有权利。</p>
     </div>
   </footer>
+
+  <!-- Language switcher script -->
+  <script>
+    (function() {
+      localStorage.setItem('datapick-lang', 'zh');
+
+      var toggle = document.getElementById('langToggle');
+      var menu = document.getElementById('langMenu');
+
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function() {
+        menu.classList.remove('open');
+      });
+
+      menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href.indexOf('/en/') !== -1) {
+            localStorage.setItem('datapick-lang', 'en');
+          } else {
+            localStorage.setItem('datapick-lang', 'zh');
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
