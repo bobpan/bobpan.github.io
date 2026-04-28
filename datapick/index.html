@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataPick AI — Extract Any Data from Any Page</title>
+  <meta name="description" content="AI-powered Chrome extension that extracts structured data from any webpage. No CSS selectors, no configuration — just one click." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="DataPick AI — Extract Any Data from Any Page" />
+  <meta property="og:description" content="AI-powered Chrome extension that extracts structured data from any webpage. No CSS selectors, no configuration — just one click." />
+  <meta property="og:image" content="https://bobot.ggff.net/og-image.png" />
+  <meta property="og:url" content="https://bobot.ggff.net/datapick/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DataPick AI" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataPick AI — Extract Any Data from Any Page" />
+  <meta name="twitter:description" content="AI-powered Chrome extension that extracts structured data from any webpage. No CSS selectors, no configuration — just one click." />
+  <meta name="twitter:image" content="https://bobot.ggff.net/og-image.png" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bobot.ggff.net/datapick/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+            slideUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
+            glow: { '0%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' }, '100%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.6)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .gradient-text { background: linear-gradient(135deg, #a78bfa 0%, #6d28d9 50%, #4f46e5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-border { border: 1px solid transparent; background: linear-gradient(#0f0f23, #0f0f23) padding-box, linear-gradient(135deg, #7c3aed, #4f46e5, #06b6d4) border-box; }
+    .hero-glow { background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), transparent); }
+    .card-glow:hover { box-shadow: 0 0 30px rgba(139, 92, 246, 0.15); }
+    body { background: #0a0a1a; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+  </style>
+</head>
+<body class="font-sans text-gray-300 grid-bg">
+
+  <!-- Navigation -->
+  <header>
+  <nav class="fixed top-0 w-full z-50 bg-[#0a0a1a]/80 backdrop-blur-xl border-b border-white/5">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-white font-bold text-lg">
+        <span class="text-2xl">🤖</span>
+        <span>DataPick <span class="gradient-text">AI</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#how-it-works" class="hover:text-white transition">How it Works</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </div>
+      <a href="#pricing" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-lg text-sm font-medium transition transform hover:scale-105">
+        Get Started Free
+      </a>
+    </div>
+  </nav>
+  </header>
+
+  <main id="main-content">
+  <!-- Hero Section -->
+  <section class="relative hero-glow pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm mb-8 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        Now in Beta — Free to try
+      </div>
+      
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 animate-slide-up">
+        Extract <span class="gradient-text">Any Data</span><br />from Any Page
+      </h1>
+      
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-slide-up" style="animation-delay: 0.2s">
+        AI-powered Chrome extension that understands webpages like a human. 
+        No CSS selectors, no configuration — just describe what you need.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up" style="animation-delay: 0.4s">
+        <a href="#" class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl text-lg font-semibold transition transform hover:scale-105 animate-glow flex items-center gap-2">
+          <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          Add to Chrome — It's Free
+        </a>
+        <a href="#how-it-works" class="text-gray-400 hover:text-white px-8 py-4 rounded-xl text-lg font-medium transition border border-white/10 hover:border-white/30">
+          See How It Works →
+        </a>
+      </div>
+
+      <!-- Demo Preview -->
+      <div class="relative max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.6s">
+        <div class="gradient-border rounded-2xl p-1">
+          <div class="bg-[#12122a] rounded-xl overflow-hidden">
+            <!-- Mock browser chrome -->
+            <div class="flex items-center gap-2 px-4 py-3 bg-[#1a1a3e] border-b border-white/5">
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+              </div>
+              <div class="flex-1 mx-4 bg-[#0f0f23] rounded-md px-3 py-1 text-xs text-gray-500">amazon.com/s?k=wireless+headphones</div>
+            </div>
+            <!-- Mock extraction result -->
+            <div class="p-6 text-left">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white text-sm">🤖</div>
+                <span class="text-sm text-brand-300">DataPick AI extracted 24 products in 3.2s</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b border-white/10 text-gray-400">
+                      <th class="text-left py-2 px-3 font-medium">Product Name</th>
+                      <th class="text-left py-2 px-3 font-medium">Price</th>
+                      <th class="text-left py-2 px-3 font-medium">Rating</th>
+                      <th class="text-left py-2 px-3 font-medium">Reviews</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-300">
+                    <tr class="border-b border-white/5 hover:bg-white/5">
+                      <td class="py-2 px-3">Sony WH-1000XM5</td>
+                      <td class="py-2 px-3 text-green-400">$278.00</td>
+                      <td class="py-2 px-3">⭐ 4.7</td>
+                      <td class="py-2 px-3">12,847</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5">
+                      <td class="py-2 px-3">Apple AirPods Max</td>
+                      <td class="py-2 px-3 text-green-400">$449.00</td>
+                      <td class="py-2 px-3">⭐ 4.5</td>
+                      <td class="py-2 px-3">8,234</td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/5">
+                      <td class="py-2 px-3">Bose QuietComfort Ultra</td>
+                      <td class="py-2 px-3 text-green-400">$329.00</td>
+                      <td class="py-2 px-3">⭐ 4.6</td>
+                      <td class="py-2 px-3">6,912</td>
+                    </tr>
+                    <tr class="hover:bg-white/5">
+                      <td class="py-2 px-3 text-gray-500">... 21 more rows</td>
+                      <td></td><td></td><td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="flex gap-3 mt-4">
+                <button type="button" class="px-4 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-medium">📥 Export CSV</button>
+                <button type="button" class="px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-xs font-medium">{ } Export JSON</button>
+                <button type="button" class="px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-xs font-medium">📋 Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-12 px-6 border-y border-white/5">
+    <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-8 text-gray-500 text-sm">
+      <span>Trusted by data professionals at</span>
+      <span class="text-gray-400 font-semibold">Amazon Sellers</span>
+      <span class="text-gray-400 font-semibold">Market Researchers</span>
+      <span class="text-gray-400 font-semibold">Recruiting Firms</span>
+      <span class="text-gray-400 font-semibold">Startups</span>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Why DataPick AI?</h2>
+        <p class="text-gray-400 text-lg">Traditional scrapers need configuration. We need zero.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Feature 1 -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23] card-glow transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-2xl mb-5">🧠</div>
+          <h3 class="text-xl font-bold text-white mb-3">AI-Powered Understanding</h3>
+          <p class="text-gray-400 leading-relaxed">Unlike rule-based scrapers, DataPick uses Large Language Models to <span class="text-brand-300">understand page semantics</span>. It knows the difference between a product price and a shipping cost.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23] card-glow transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mb-5">💬</div>
+          <h3 class="text-xl font-bold text-white mb-3">Natural Language Commands</h3>
+          <p class="text-gray-400 leading-relaxed">Just type <span class="text-blue-300">"Extract all product names and prices"</span> — no CSS selectors, no XPath, no technical knowledge required.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23] card-glow transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-2xl mb-5">⚡</div>
+          <h3 class="text-xl font-bold text-white mb-3">One-Click Extraction</h3>
+          <p class="text-gray-400 leading-relaxed">Open any webpage, click the extension. <span class="text-green-300">Structured data in under 5 seconds.</span> Works on Amazon, LinkedIn, news sites, and any other website.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23] card-glow transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-2xl mb-5">📊</div>
+          <h3 class="text-xl font-bold text-white mb-3">Export Anywhere</h3>
+          <p class="text-gray-400 leading-relaxed">Download as <span class="text-orange-300">CSV, JSON</span>, or copy to clipboard. Coming soon: direct export to Google Sheets, Notion, and Airtable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-24 px-6 bg-[#0d0d20]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">How It Works</h2>
+        <p class="text-gray-400 text-lg">Three steps. That's it.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-3xl mx-auto mb-6">1️⃣</div>
+          <h3 class="text-lg font-bold text-white mb-2">Install Extension</h3>
+          <p class="text-gray-400 text-sm">Add DataPick AI from Chrome Web Store. Takes 10 seconds.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-3xl mx-auto mb-6">2️⃣</div>
+          <h3 class="text-lg font-bold text-white mb-2">Open Any Page</h3>
+          <p class="text-gray-400 text-sm">Navigate to the website with the data you need.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-3xl mx-auto mb-6">3️⃣</div>
+          <h3 class="text-lg font-bold text-white mb-2">Click & Extract</h3>
+          <p class="text-gray-400 text-sm">Click the extension icon. AI extracts and structures the data automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+        <p class="text-gray-400 text-lg">Start free. Upgrade when you need more.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Free Plan -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23]">
+          <h3 class="text-lg font-bold text-white mb-1">Free</h3>
+          <p class="text-gray-500 text-sm mb-6">For trying things out</p>
+          <div class="mb-8">
+            <span class="text-4xl font-extrabold text-white">$0</span>
+            <span class="text-gray-500">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 5 extractions per day</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> CSV & JSON export</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Natural language commands</li>
+            <li class="flex items-center gap-2 text-gray-500"><span class="text-gray-600">✗</span> Extraction history</li>
+            <li class="flex items-center gap-2 text-gray-500"><span class="text-gray-600">✗</span> Templates</li>
+          </ul>
+          <a href="#" class="block text-center py-3 px-6 rounded-xl border border-white/10 text-white font-medium hover:bg-white/5 transition">
+            Get Started
+          </a>
+        </div>
+        
+        <!-- Pro Plan (Featured) -->
+        <div class="relative rounded-2xl p-8 bg-gradient-to-b from-brand-900/50 to-[#0f0f23] border border-brand-500/30 transform md:scale-105">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</div>
+          <h3 class="text-lg font-bold text-white mb-1">Pro</h3>
+          <p class="text-gray-500 text-sm mb-6">For professionals</p>
+          <div class="mb-8">
+            <span class="text-4xl font-extrabold text-white">$9.9</span>
+            <span class="text-gray-500">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 100 extractions per month</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> CSV & JSON export</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Natural language commands</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Full extraction history</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Reusable templates</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Priority AI processing</li>
+          </ul>
+          <a href="#" class="block text-center py-3 px-6 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium transition transform hover:scale-105">
+            Start Pro Trial
+          </a>
+        </div>
+        
+        <!-- Team Plan -->
+        <div class="gradient-border rounded-2xl p-8 bg-[#0f0f23]">
+          <h3 class="text-lg font-bold text-white mb-1">Team</h3>
+          <p class="text-gray-500 text-sm mb-6">For teams & power users</p>
+          <div class="mb-8">
+            <span class="text-4xl font-extrabold text-white">$29</span>
+            <span class="text-gray-500">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Unlimited extractions</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Everything in Pro</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Team sharing</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> API access</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Priority support</li>
+            <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> Custom integrations</li>
+          </ul>
+          <a href="#" class="block text-center py-3 px-6 rounded-xl border border-white/10 text-white font-medium hover:bg-white/5 transition">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-24 px-6 bg-[#0d0d20]">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="space-y-4">
+        <details class="group gradient-border rounded-xl bg-[#0f0f23]">
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-medium">
+            How is DataPick AI different from Instant Data Scraper?
+            <span class="transition-transform group-open:rotate-45 text-brand-400 text-xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+            Instant Data Scraper uses pattern matching to find HTML tables — it only works on well-structured pages. DataPick AI uses Large Language Models to <strong class="text-white">understand</strong> the page content semantically. It works on any page, including articles, profiles, and unstructured content. Plus, you can use natural language to specify exactly what data you want.
+          </div>
+        </details>
+        
+        <details class="group gradient-border rounded-xl bg-[#0f0f23]">
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-medium">
+            Is my browsing data safe?
+            <span class="transition-transform group-open:rotate-45 text-brand-400 text-xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+            Absolutely. DataPick AI only processes a page when you explicitly click the extract button. We <strong class="text-white">never</strong> track your browsing history, and we don't store the raw page content — only the structured extraction results. You can delete your data anytime. We're fully GDPR compliant.
+          </div>
+        </details>
+        
+        <details class="group gradient-border rounded-xl bg-[#0f0f23]">
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-medium">
+            What websites does it work on?
+            <span class="transition-transform group-open:rotate-45 text-brand-400 text-xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+            DataPick AI works on <strong class="text-white">any website</strong> — Amazon, LinkedIn, news sites, real estate listings, job boards, e-commerce platforms, and more. If you can see the data in your browser, DataPick can extract it.
+          </div>
+        </details>
+        
+        <details class="group gradient-border rounded-xl bg-[#0f0f23]">
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-medium">
+            Can I cancel my subscription anytime?
+            <span class="transition-transform group-open:rotate-45 text-brand-400 text-xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+            Yes! You can cancel anytime from your account settings. No questions asked, no hidden fees. Your Pro features will remain active until the end of your billing period.
+          </div>
+        </details>
+        
+        <details class="group gradient-border rounded-xl bg-[#0f0f23]">
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-white font-medium">
+            What AI model do you use?
+            <span class="transition-transform group-open:rotate-45 text-brand-400 text-xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+            We use a combination of <strong class="text-white">GPT-4o-mini and DeepSeek V3</strong> optimized for data extraction tasks. Pro and Team users get access to more powerful models for higher accuracy on complex pages.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Stop copying data manually.<br />
+        <span class="gradient-text">Let AI do it.</span>
+      </h2>
+      <p class="text-gray-400 text-lg mb-10">
+        Join thousands of professionals who save hours every week with DataPick AI.
+      </p>
+      <a href="#" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-10 py-4 rounded-xl text-lg font-semibold transition transform hover:scale-105 animate-glow">
+        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Add to Chrome — Free Forever
+      </a>
+      <p class="text-gray-500 text-sm mt-4">No credit card required · Works on Chrome, Edge, Brave</p>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2 text-white font-bold">
+        <span class="text-xl">🤖</span>
+        <span>DataPick <span class="gradient-text">AI</span></span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href="privacy.html" class="hover:text-gray-300 transition">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-300 transition">Terms of Service</a>
+        <a href="mailto:nicepan@gmail.com" class="hover:text-gray-300 transition">Contact</a>
+        <a href="https://github.com/bobpan/ai-web-scraper" class="hover:text-gray-300 transition">GitHub</a>
+      </div>
+      <p class="text-gray-500 text-sm">© 2025 DataPick AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
